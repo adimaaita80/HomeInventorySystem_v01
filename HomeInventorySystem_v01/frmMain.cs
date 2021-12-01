@@ -17,6 +17,11 @@ namespace HomeInventorySystem_v01
             InitializeComponent();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            treeViewNavigation.ExpandAll();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             string message = "Are you sure you want to exit this application?";
@@ -26,8 +31,9 @@ namespace HomeInventorySystem_v01
 
             DialogResult result = MessageBox.Show(message, title, buttons);
 
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
                 Application.Exit();
         }
+
     }
 }

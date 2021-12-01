@@ -29,15 +29,15 @@ namespace HomeInventorySystem_v01
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("User Profile");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Shopping Items");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("My Inventory");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Statistics and Charts");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Home Inventory System", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("User Profile");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Shopping Items");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("My Inventory");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Statistics and Charts");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Home Inventory System", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
             this.panelApplication = new System.Windows.Forms.Panel();
@@ -134,18 +134,18 @@ namespace HomeInventorySystem_v01
             this.treeViewNavigation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeViewNavigation.Location = new System.Drawing.Point(0, 0);
             this.treeViewNavigation.Name = "treeViewNavigation";
-            treeNode1.Name = "NodeUserProfile";
-            treeNode1.Text = "User Profile";
-            treeNode2.Name = "NodeShoppingItems";
-            treeNode2.Text = "Shopping Items";
-            treeNode3.Name = "NodeMyInventory";
-            treeNode3.Text = "My Inventory";
-            treeNode4.Name = "NodeStatisticsAndCharts";
-            treeNode4.Text = "Statistics and Charts";
-            treeNode5.Name = "NodeRoot";
-            treeNode5.Text = "Home Inventory System";
+            treeNode6.Name = "NodeUserProfile";
+            treeNode6.Text = "User Profile";
+            treeNode7.Name = "NodeShoppingItems";
+            treeNode7.Text = "Shopping Items";
+            treeNode8.Name = "NodeMyInventory";
+            treeNode8.Text = "My Inventory";
+            treeNode9.Name = "NodeStatisticsAndCharts";
+            treeNode9.Text = "Statistics and Charts";
+            treeNode10.Name = "NodeRoot";
+            treeNode10.Text = "Home Inventory System";
             this.treeViewNavigation.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            treeNode10});
             this.treeViewNavigation.Size = new System.Drawing.Size(250, 494);
             this.treeViewNavigation.TabIndex = 0;
             // 
@@ -172,6 +172,7 @@ namespace HomeInventorySystem_v01
             this.Name = "frmMain";
             this.Text = "Home Inventroy System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelApplication.ResumeLayout(false);
