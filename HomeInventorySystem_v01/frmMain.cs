@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeInventorySystem_v01.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace HomeInventorySystem_v01
 {
     public partial class frmMain : Form
     {
+        private Form currentActiveForm = null;
+
         public frmMain()
         {
             InitializeComponent();
@@ -35,5 +38,40 @@ namespace HomeInventorySystem_v01
                 Application.Exit();
         }
 
+        private void treeViewNavigation_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            Form frm = null;
+
+            TreeNode node = e.Node;
+
+            if (node.Name == "NodeUserProfile")
+                frm = new frmUserProfile();
+            else if (node.Name == "NodeShoppingItems")
+                frm = new frmShoppingItems();
+            else if (node.Name == "NodeMyInventory")
+                frm = new frmMyInventory();
+            else if (node.Name == "NodeStatisticsAndCharts")
+                frm = new frmStatisticsAndCharts();
+
+
+            if(frm != null)
+            {
+                if(currentActiveForm != null && currentActiveForm != frm)
+                {
+                    currentActiveForm.Close();
+                    panelContent.Controls.Remove(currentActiveForm);
+                }
+
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.BackColor = Color.White;
+                currentActiveForm = frm;
+
+                panelContent.Controls.Add(frm);
+                frm.Show();
+            }
+            
+        }
     }
 }

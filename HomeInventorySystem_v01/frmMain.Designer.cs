@@ -29,15 +29,17 @@ namespace HomeInventorySystem_v01
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("User Profile");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Shopping Items");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("My Inventory");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Statistics and Charts");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Home Inventory System", new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9});
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("User Profile");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Shopping Items");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("My Inventory");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Statistics and Charts");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Home Inventory System", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
             this.panelApplication = new System.Windows.Forms.Panel();
@@ -46,6 +48,7 @@ namespace HomeInventorySystem_v01
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.treeViewNavigation = new System.Windows.Forms.TreeView();
+            this.imageListNavigation = new System.Windows.Forms.ImageList(this.components);
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelHeader.SuspendLayout();
             this.panelApplication.SuspendLayout();
@@ -91,7 +94,7 @@ namespace HomeInventorySystem_v01
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(1173, 74);
+            this.btnExit.Location = new System.Drawing.Point(1165, 74);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(121, 34);
             this.btnExit.TabIndex = 2;
@@ -102,7 +105,7 @@ namespace HomeInventorySystem_v01
             // lblDisplayName
             // 
             this.lblDisplayName.AutoSize = true;
-            this.lblDisplayName.Location = new System.Drawing.Point(116, 45);
+            this.lblDisplayName.Location = new System.Drawing.Point(122, 45);
             this.lblDisplayName.Name = "lblDisplayName";
             this.lblDisplayName.Size = new System.Drawing.Size(90, 19);
             this.lblDisplayName.TabIndex = 1;
@@ -111,7 +114,7 @@ namespace HomeInventorySystem_v01
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HomeInventorySystem_v01.Properties.Resources.UserPhotoGeneric;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 103);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,22 +135,48 @@ namespace HomeInventorySystem_v01
             // treeViewNavigation
             // 
             this.treeViewNavigation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeViewNavigation.HotTracking = true;
+            this.treeViewNavigation.ImageIndex = 0;
+            this.treeViewNavigation.ImageList = this.imageListNavigation;
             this.treeViewNavigation.Location = new System.Drawing.Point(0, 0);
             this.treeViewNavigation.Name = "treeViewNavigation";
-            treeNode6.Name = "NodeUserProfile";
-            treeNode6.Text = "User Profile";
-            treeNode7.Name = "NodeShoppingItems";
-            treeNode7.Text = "Shopping Items";
-            treeNode8.Name = "NodeMyInventory";
-            treeNode8.Text = "My Inventory";
-            treeNode9.Name = "NodeStatisticsAndCharts";
-            treeNode9.Text = "Statistics and Charts";
-            treeNode10.Name = "NodeRoot";
-            treeNode10.Text = "Home Inventory System";
+            treeNode1.ImageKey = "UserInformation.jpg";
+            treeNode1.Name = "NodeUserProfile";
+            treeNode1.SelectedImageKey = "Check.png";
+            treeNode1.Text = "User Profile";
+            treeNode2.ImageKey = "schedule.png";
+            treeNode2.Name = "NodeShoppingItems";
+            treeNode2.SelectedImageKey = "Check.png";
+            treeNode2.Text = "Shopping Items";
+            treeNode3.ImageKey = "Registration.png";
+            treeNode3.Name = "NodeMyInventory";
+            treeNode3.SelectedImageKey = "Check.png";
+            treeNode3.Text = "My Inventory";
+            treeNode4.ImageKey = "Dashboard.jpg";
+            treeNode4.Name = "NodeStatisticsAndCharts";
+            treeNode4.SelectedImageKey = "Check.png";
+            treeNode4.Text = "Statistics and Charts";
+            treeNode5.ImageKey = "GeneralManagement.png";
+            treeNode5.Name = "NodeRoot";
+            treeNode5.SelectedImageKey = "GeneralManagement.png";
+            treeNode5.Text = "Home Inventory System";
             this.treeViewNavigation.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode10});
+            treeNode5});
+            this.treeViewNavigation.SelectedImageIndex = 0;
             this.treeViewNavigation.Size = new System.Drawing.Size(250, 494);
             this.treeViewNavigation.TabIndex = 0;
+            this.treeViewNavigation.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewNavigation_AfterSelect);
+            // 
+            // imageListNavigation
+            // 
+            this.imageListNavigation.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListNavigation.ImageStream")));
+            this.imageListNavigation.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListNavigation.Images.SetKeyName(0, "GeneralManagement.png");
+            this.imageListNavigation.Images.SetKeyName(1, "UserInformation.jpg");
+            this.imageListNavigation.Images.SetKeyName(2, "schedule.png");
+            this.imageListNavigation.Images.SetKeyName(3, "Registration.png");
+            this.imageListNavigation.Images.SetKeyName(4, "Dashboard.jpg");
+            this.imageListNavigation.Images.SetKeyName(5, "Check.png");
             // 
             // panelContent
             // 
@@ -194,5 +223,6 @@ namespace HomeInventorySystem_v01
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TreeView treeViewNavigation;
+        private System.Windows.Forms.ImageList imageListNavigation;
     }
 }
