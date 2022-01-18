@@ -31,9 +31,9 @@ namespace HomeInventorySystem_v01.DataAccessLayer
         public static void UpdateUser(User user)
         {
             string commandText = $"Update SystemUsers Set " +
-                $"FirstName = '{user.FirstName}'" +
-                $"LastName = '{user.LastName}'" +
-                $"Username = '{user.Username}'" +
+                $"FirstName = '{user.FirstName}', " +
+                $"LastName = '{user.LastName}', " +
+                $"Username = '{user.Username}', " +
                 $"Password = '{user.Password}'";
 
             SqlCommand command = new SqlCommand(commandText, connection);
